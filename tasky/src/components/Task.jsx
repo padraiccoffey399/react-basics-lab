@@ -6,6 +6,10 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
+import CheckIcon from '@mui/icons-material/Check';
+import { Check } from '@mui/icons-material';
+
 
 
 const Task = (props) => {
@@ -33,10 +37,11 @@ const Task = (props) => {
             <CardHeader
             title={props.title}
             sx={{
-                backgroundColor: 'white',
+                backgroundColor: backgroundColor,
                 borderRadius: '3px',
                 padding: '20px',
-                textAlign: 'center'
+                textAlign: 'center',
+                boxShadow: 4
             }}
             />
             <CardContent>
@@ -67,7 +72,7 @@ const Task = (props) => {
                 {props.description}
             </Typography>
             </CardContent>
-            
+
             <CardActions
             sx={{
                 justifyContent: 'space-between',
@@ -81,6 +86,7 @@ const Task = (props) => {
                 onClick={props.markDone}
             >
                 Done
+                <CheckIcon/>
             </Button>
 
             <Button
@@ -90,6 +96,7 @@ const Task = (props) => {
                 onClick={props.deleteTask}
             >
                 Delete
+                <DeleteIcon />
             </Button>
             </CardActions>
             

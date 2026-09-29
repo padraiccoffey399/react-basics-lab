@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
+import MenuItem from '@mui/material/MenuItem'; 
 
 const AddTaskForm = (props) => {
 
@@ -36,6 +36,21 @@ const AddTaskForm = (props) => {
                 type="date"
                 onChange={(event) => props.change(event)}
             />
+            </div>
+            {/* Priority Dropdown */}
+            <div>
+            <TextField
+                select
+                name="priority"
+                label="Priority"
+                defaultValue="Low"
+                slotProps={{ inputLabel: { shrink: true } }}
+                onChange={(event) => props.change(event)}
+            >
+                <MenuItem value="Low">Low</MenuItem>
+                <MenuItem value="Medium">Medium</MenuItem>
+                <MenuItem value="High">High</MenuItem>
+            </TextField>
             </div>
             <div>
             <TextField

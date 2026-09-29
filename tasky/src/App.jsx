@@ -108,18 +108,24 @@ function App() {
               container
               spacing={5}
               sx={{
-                justifyContent: "center"
-              }}
+              backgroundColor: 'primary.main',
+              color: 'white',
+              borderRadius: 2,
+              p: 2
+            }}
+
             >
             {taskState.tasks.map((task, index) => (
               <Task
                 title={task.title}
                 description={task.description}
                 deadline={task.deadline}
+                priority={task.priority}
                 done={task.done}
                 key={task.id}
                 markDone={() => doneHandler(index)}
                 deleteTask={() => deleteHandler(index)}
+                
               />
             ))}
           </Grid>
